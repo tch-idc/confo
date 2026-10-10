@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#f7f3e8"><title>side B — Oishi FM</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=DM+Mono&family=Space+Grotesk:wght@400;500;600;700&family=Fraunces:opsz,wght@9..144,400;9..144,500&display=swap');
+:root{--bg:#f7f3e8;--ink:#29483a;--accent:#bd6b78;--blue:#758b68;--muted:#72766b;--line:#29483a30;--paper:#fffdf6}
+*{box-sizing:border-box;margin:0;padding:0}html{scroll-behavior:smooth}body{background:var(--bg);color:var(--ink);font-family:'Space Grotesk',system-ui,sans-serif;overflow-x:hidden}body.lock{overflow:hidden}
+body:before{content:"";position:fixed;inset:0;pointer-events:none;z-index:0;opacity:.20;background-image:radial-gradient(ellipse at 10% 15%,#bd6b7830 0 2px,transparent 3px),radial-gradient(ellipse at 90% 70%,#758b6830 0 2px,transparent 3px),radial-gradient(#29483a18 .65px,transparent .65px);background-size:82px 92px,105px 110px,8px 8px}
+body:after{content:"✿  ❀  ❁";white-space:pre;position:fixed;right:18px;top:16px;z-index:2;pointer-events:none;color:#bd6b78;opacity:.52;font-size:20px;letter-spacing:8px;writing-mode:vertical-rl;line-height:1.7}
+.progress{height:5px;background:var(--accent);position:fixed;top:0;left:0;width:0;z-index:20}#confetti{position:fixed;inset:0;pointer-events:none;z-index:30}
+.glow{position:fixed;width:38vw;height:38vw;border-radius:50%;filter:blur(85px);opacity:.20;pointer-events:none;z-index:0}.g1{background:#e9b8bd;top:-15%;left:-12%}.g2{background:#a9c1a0;right:-15%;bottom:-10%}
+section{position:relative;z-index:1;min-height:95svh;display:grid;place-items:center;padding:82px 22px}.inner{width:min(850px,100%);margin:auto}.center{text-align:center}
+.mono{font:10px 'DM Mono',monospace;letter-spacing:.17em;text-transform:uppercase;color:#686d79}.fade{opacity:0;transform:translateY(22px) rotate(-.5deg);transition:.8s ease}.fade.show{opacity:1;transform:none}
+h1,h2{font-weight:700;letter-spacing:-.075em;line-height:.91}h1{font-size:clamp(4.4rem,17vw,10rem)}h2{font-size:clamp(3rem,11vw,7rem)}.pink{color:var(--accent)}
+.flower-divider{display:flex;align-items:center;justify-content:center;gap:12px;color:var(--accent);font-size:21px;letter-spacing:.12em;margin:22px 0}.flower-divider:before,.flower-divider:after{content:"";display:block;width:54px;height:1px;background:#bd6b7866}
+.flower-stamp{display:inline-grid;place-items:center;width:42px;height:42px;border:1px solid #bd6b7877;border-radius:50%;color:var(--accent);font-size:23px;margin-bottom:16px;background:#fffdf6}
+.sub{max-width:580px;margin:28px auto 0;color:#4f5668;line-height:1.9;font-size:clamp(1rem,3.6vw,1.16rem)}.tag{display:inline-block;padding:9px 12px;border:1px solid #29483a70;border-radius:30px;color:var(--ink);font:10px 'DM Mono';letter-spacing:.1em;margin-bottom:26px;background:#fffdf6;box-shadow:3px 3px 0 #bd6b7844;transform:rotate(-2deg)}
+.btn{display:inline-flex;justify-content:center;align-items:center;margin-top:30px;padding:14px 22px;min-height:48px;border-radius:30px;border:1px solid #29483a80;color:var(--ink);background:var(--paper);cursor:pointer;transition:transform .2s,background .2s;box-shadow:3px 4px 0 #758b6855;font:600 14px 'Space Grotesk',sans-serif}.btn:hover{transform:translateY(-2px);box-shadow:4px 5px 0 #758b6877}.primary{background:var(--accent);border-color:var(--accent);color:#fffdf6;box-shadow:3px 4px 0 #29483a55}.btn-row{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;position:relative;min-height:88px;align-items:center}.btn.dodge{transition:left .18s ease,top .18s ease,transform .18s ease}
+.hint{position:absolute;bottom:25px;color:#777b84;font:10px 'DM Mono';letter-spacing:.16em;text-transform:uppercase}.bigquote{font:clamp(1.8rem,6.5vw,4.4rem) Fraunces,serif;line-height:1.18;letter-spacing:-.035em;max-width:760px;margin:26px auto}.bigquote em{font-style:normal;color:var(--accent)}
+.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin-top:42px;text-align:left}.card{border:1px solid #29483a55;background:var(--paper);border-radius:18px 18px 18px 4px;padding:24px;min-height:150px;box-shadow:4px 5px 0 #758b683b;transform:rotate(-.4deg)}.card:nth-child(2n){transform:rotate(.5deg);box-shadow:4px 5px 0 #bd6b783b;border-radius:18px 18px 4px 18px}.num{font:10px 'DM Mono';color:var(--accent);letter-spacing:.12em}.card h3{font-size:1.05rem;font-weight:700;margin-top:18px}.card p{color:#565d6e;font-size:.92rem;line-height:1.7;margin-top:10px}.note{margin:28px auto 0;color:#686d79;font-size:.92rem;line-height:1.8;max-width:620px}
+.letter{border:1px solid #29483a66;background:var(--paper);border-radius:22px 22px 22px 5px;padding:clamp(24px,6vw,52px);text-align:left;margin-top:28px;box-shadow:7px 8px 0 #bd6b7840;position:relative}.letter:before{content:"✿  SIDE B — THE PART I MEAN  ✿";display:block;font:10px 'DM Mono';letter-spacing:.12em;color:var(--accent);margin-bottom:28px}.letter p{font-size:clamp(.98rem,3.6vw,1.08rem);line-height:1.95;color:#424a5d;margin-bottom:18px}.letter strong{font-weight:700;color:var(--accent)}
+.proposal{min-height:105svh}.box{width:min(760px,100%);padding:clamp(24px,6vw,58px);border:1px solid #29483a66;border-radius:28px 28px 28px 6px;background:var(--paper);box-shadow:8px 9px 0 #758b6844}.response{min-height:1.5em;margin-top:22px;color:var(--blue);line-height:1.8;font-weight:600}
+footer{text-align:center;padding:30px 20px 45px;color:#777b84;font:10px 'DM Mono';letter-spacing:.1em;position:relative;z-index:1}
+@media(max-width:600px){body:after{right:8px;top:10px;font-size:16px;letter-spacing:5px}section{padding:76px 18px;min-height:90svh}.grid{grid-template-columns:1fr}.card{min-height:125px}.btn-row{flex-direction:column;align-items:stretch}.btn{width:100%}.box{border-radius:22px 22px 22px 5px}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{transition:none!important;animation:none!important}}
+</style></head>
+<body class="lock"><div class="progress" id="progress"></div><div class="glow g1"></div><div class="glow g2"></div><canvas id="confetti"></canvas>
+<section id="opening"><div class="inner center"><div class="flower-stamp fade" aria-hidden="true">✿</div><div class="tag fade">JIN LABS PRESENTS · OISHI FM</div><h1 class="fade">side B,<br><span class="pink">bish.</span></h1><div class="flower-divider fade" aria-hidden="true">❀ ✿ ❀</div><p class="sub fade">You already know this isn't the first time I've said it. 💀<br>This isn't a reset. Just the part I still wanted you to hear.</p><button class="btn primary fade" id="begin">play the tape ▶</button></div><div class="hint">just keep going ↓</div></section>
+<section><div class="inner center"><div class="mono fade">01 / THE UNEXPECTED PART</div><h2 class="fade" style="margin-top:24px">One random<br><span class="pink">text.</span></h2><p class="sub fade">July 16. Ami just randomly tomake text korechilam. I had absolutely no idea je ekta random text theke tomar shathe eto kotha hobe, eto kichu match korbe, ar tumi amar kache eto important hoye jaba.</p><p class="note fade">And technically, we go way further back than that. Same class 12 years ago… and you pulled my ears. Tumi bhule gecho, obviously. 💀🥀</p></div></section>
+<section><div class="inner center"><div class="mono fade">02 / EXPLAIN THIS THEN</div><p class="bigquote fade">Same songs. Same exact lines.<br><em>Same timing. No context.</em></p><div class="grid">
+<article class="card fade"><span class="num">01 / THE SONG</span><h3>“What are you listening to?”</h3><p>Randomly jiggesh kori, and somehow we're listening to the exact same song. Like, how? 💀🥀</p></article>
+<article class="card fade"><span class="num">02 / THE LINE</span><h3>Same words. Same second.</h3><p>Kono context chara duijon ekshathe exact same line bole feli. Eta coincidence naki amader matha ek hoye gese? 😭🥀</p></article>
+<article class="card fade"><span class="num">03 / THE HOURS</span><h3>13–14+ hours, somehow.</h3><p>7–8 hours texting, then 6–7 hours VC. Usually 4–5 AM, sometimes shokal 9ta. Ar tarporo kotha shesh hoy na. 💀🥀</p></article>
+<article class="card fade"><span class="num">04 / THE FEELING</span><h3>Everything else goes quiet.</h3><p>Tomar shathe kotha bolle baki shob kichu temporarily bhule jai. We just talk, laugh, tease each other, and time disappears.</p></article></div></div></section>
+<section><div class="inner center"><div class="mono fade">03 / NO JOKES FOR A SECOND</div><p class="bigquote fade">I love teasing you.<br><em>But I love you being in my life more.</em></p><p class="sub fade">Tomake rage bait kora amar favourite hobby hoye gese, but shob joke-er baire I genuinely care about you. Tumi shobar jonno eto kichu koro—ami chai tumi-o care pao, happy thako, ar nijer jonno-o time rakho.</p></div></section>
+<section><div class="inner center"><div class="mono fade">04 / THE OBVIOUS CONFESSION</div><h2 class="fade" style="margin-top:30px">Your <span class="pink">voice.</span><br>Your <span class="pink">eyes.</span></h2><p class="sub fade">Yeah, I'm cooked. 💀🥀</p><p class="note fade">And somewhere between all those conversations and all those little coincidences, I caught feelings. Not exactly part of the plan, but here we are.</p></div></section>
+<section><div class="inner"><div class="mono fade">05 / THE PART I STILL MEAN</div><div class="letter fade">
+<p>Okay, awkward intro skip kori 💀 You already know je ami tomake like kori, so this isn't me acting like I'm saying it for the first time. I just wanted to make something that says it a little better than I can over text.</p>
+<p>July 16 e tomake text korar shomoy ami genuinely bujhi nai je tumi amar everyday life-er eto boro part hoye jaba. Ekhon tomar shathe kotha bola, random kichu share kora, ba just tomar voice shona—these have become some of my favourite parts of the day.</p>
+<p>Same songs, same lines at the same time, hours of texting and calls that somehow never feel long enough. Egula maybe chhoto chhoto things, but amar kache egulai special. Ar ha, tomar voice ar eyes niye ami ekhono absolutely cooked. 💀🥀</p>
+<p>Jani, July-te ami already bolechilam, ar tomar answer-o ami bhule jai nai. I'm not pretending that didn't happen, and I'm not asking you to feel differently just because I made a website.</p>
+<p><strong>My feelings haven't really gone away, Oishi.</strong> If anything, getting to know you more has made you even more important to me. If something has changed for you too, I'd love to know. If it hasn't, I'll respect that—no guilt, no pressure, no weirdness from me.</p>
+<p>I just wanted you to know that behind all the rage-baiting and calling you bish, there's someone who genuinely cares about you and is really glad that random text happened. That's it. That's the whole confession. 💗</p>
+</div></div></section>
+<section class="proposal" id="question"><div class="inner center"><div class="box fade"><div class="mono">06 / YOUR TURN, FOR REAL</div><h2 style="margin-top:25px">Oishi,<br><span class="pink">do you feel it too?</span></h2><p class="sub">You already know my answer. Yours is yours to give, honestly. 💗</p><div class="btn-row"><button class="btn primary" id="yes">yes, bish. 💗</button><button class="btn dodge" id="think">I need a little time</button><button class="btn dodge" id="no">no 💀</button></div><div class="response" id="response" aria-live="polite"></div></div></div></section>
+<footer>OISHI FM · RECORDED WITH FEELINGS, MIXED WITH HTML · JIN</footer>
+<script>
+const $=s=>document.querySelector(s);const obs=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('show')}),{threshold:.14});document.querySelectorAll('.fade').forEach(x=>obs.observe(x));
+$('#begin').onclick=()=>{document.body.classList.remove('lock');document.querySelectorAll('section')[1].scrollIntoView({behavior:'smooth'})};
+addEventListener('scroll',()=>{let m=document.documentElement.scrollHeight-innerHeight;$('#progress').style.width=(m?scrollY/m*100:0)+'%'},{passive:true});
+const c=$('#confetti'),ctx=c.getContext('2d');let bits=[],running=false;function size(){c.width=innerWidth*devicePixelRatio;c.height=innerHeight*devicePixelRatio;ctx.setTransform(devicePixelRatio,0,0,devicePixelRatio,0,0)}size();addEventListener('resize',size);
+function burst(n=180){const petals=['#bd6b78','#d99aa2','#e9c6a0','#758b68','#a9c1a0','#e7d9c6'];bits=Array.from({length:n},()=>({x:Math.random()*innerWidth,y:-Math.random()*innerHeight*.3,vx:(Math.random()-.5)*3.5,vy:1.4+Math.random()*4.2,g:.025+Math.random()*.04,life:120+Math.random()*100,s:5+Math.random()*9,ch:petals[Math.floor(Math.random()*petals.length)],r:Math.random()*6,vr:(Math.random()-.5)*.09}));if(!running){running=true;requestAnimationFrame(draw)}}
+function draw(){ctx.clearRect(0,0,innerWidth,innerHeight);bits.forEach(p=>{p.x+=p.vx;p.y+=p.vy;p.vy+=p.g;p.r+=p.vr;p.life--;ctx.save();ctx.translate(p.x,p.y);ctx.rotate(p.r);ctx.globalAlpha=Math.min(1,p.life/50);ctx.fillStyle=p.ch;ctx.beginPath();ctx.ellipse(0,0,p.s*.55,p.s,0,0,Math.PI*2);ctx.fill();ctx.restore()});bits=bits.filter(p=>p.life>0&&p.y<innerHeight+40);if(bits.length)requestAnimationFrame(draw);else running=false}
+$('#yes').onclick=()=>{burst(280);$('#response').textContent='Wait—seriously? You just made me the happiest idiot alive. 🌷💗 Come talk to me when you’re ready.';$('#yes').textContent='🌷 yes 🌷';$('#think').style.display='none';$('#no').style.display='none'};
+// The two nervous buttons dodge playfully a few times, then stay put so her answer is still hers.
+function makeDodge(button, kind){
+ let dodges=0, settled=false;
+ const dodge=()=>{
+   if(settled || dodges>=3){settled=true;button.style.position='';button.style.left='';button.style.top='';button.style.transform='';return}
+   dodges++;
+   const row=button.parentElement, maxX=Math.max(0,row.clientWidth-button.offsetWidth), maxY=38;
+   button.style.position='absolute';button.style.left=Math.round(Math.random()*maxX)+'px';button.style.top=Math.round(Math.random()*maxY)+'px';
+   button.style.transform='rotate('+(Math.random()*10-5)+'deg)';
+   if(dodges===3){button.textContent=kind==='no'?'okay, you can say no 🌷':'okay, take your time 🌷';button.setAttribute('aria-label',button.textContent);}
+ };
+ button.addEventListener('pointerenter',dodge);
+ button.addEventListener('click',()=>{
+   if(!settled && dodges<3){dodge();return}
+   if(kind==='think') $('#response').textContent='That’s okay. Take all the time you need. I meant what I said, and there’s no pressure to answer right now. 🌷';
+   else $('#response').textContent='Okay, I hear you. Thank you for being honest with me. I respect your answer, Oishi. 🌷';
+   button.textContent=kind==='think'?'thank you for understanding':'thank you for being honest';
+   $('#think').style.display='none';$('#no').style.display='none';
+ });
+}
+makeDodge($('#think'),'think');makeDodge($('#no'),'no');
+</script></body></html>
